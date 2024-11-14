@@ -137,6 +137,6 @@ The baseline model will be a simple linear regression, with standardized scaling
 | `tags` | Nominal - Multilabel Binarizer|
 
 
-This baseline model acheives a mean squared error of approximately 1121 on the train data, with an error of approximately $$1.2 x 10^{20}$$ for the test data, showing the model cannot generalize well, and is not a good model. This is by all means a terrible score, and likely heavily overfit due to the remarkable discrepancy between train and test error. 
+This baseline model acheives a mean squared error of approximately 1121 on the train data, with an error of approximately 1.2 x 10<sup>20</sup> X^2^ for the test data, showing the model cannot generalize well, and is not a good model. This is by all means a terrible score, and likely heavily overfit due to the remarkable discrepancy between train and test error. 
 
 # Final Model
