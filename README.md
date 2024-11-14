@@ -83,7 +83,7 @@ Finally a bubble plot was created to visualize the linear relationship of protei
 <iframe
   src="assets/bubble-plot.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -106,7 +106,7 @@ Due to the prevalence of null values, an imputation strategy must be employed to
 <iframe
   src="assets/impute-before.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -115,7 +115,7 @@ The imputation strategy is to impute the mean average rating for each tag group,
 <iframe
   src="assets/impute-after.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -137,6 +137,6 @@ The baseline model will be a simple linear regression, with standardized scaling
 | `tags` | Nominal - Encoded with multilabel binarizer|
 
 
-This baseline model acheives a mean squared error of approximately 1121 on the train data, with an error of 1.2 x 10^20^ for the test data. This is by all means a terrible score, and likely heavily overfit due to the remarkable discrepancy between train and test error. 
+This baseline model acheives a mean squared error of approximately 1121 on the train data, with an error of 1.2 x 10^20^ for the test data, showing the model cannot generalize well, and is not a good model. This is by all means a terrible score, and likely heavily overfit due to the remarkable discrepancy between train and test error. 
 
 # Final Model
