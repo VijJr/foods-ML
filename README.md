@@ -3,7 +3,7 @@
 
 Analysis of recipes for EECS398 at the University of Michigan
 
-by Vijay Ravi | vijjr@umich.edu
+by Vijay Ravi, vijjr@umich.edu
 
 # Introduction
 
@@ -13,16 +13,13 @@ The goal of this analysis is to predict information about the nutrition for each
 
 Together these datasets include information about recipe nutrition, time to prepare, the number of steps, ratings for each recipe, and more. A detailed breakdown is provided below. Note that some irrelevant features were dropped. 
 
-| Syntax | Description |
+| Column | Description |
 | ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| [id] | A unique ID for each recipe / rating |
+| [minutes] | The time to complete each recipe |
+| [tags] | A list of tags associated with a recipe |
+| [nutrition] | The nutrition information (i.e. calories, protein, fats, etc) |
+| [n_steps] | The number of steps in a recipe |
+| [rating] | The rating provided |
 
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-```
 
