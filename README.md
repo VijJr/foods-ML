@@ -3,7 +3,7 @@
 
 Analysis of recipes for EECS398 at the University of Michigan
 
-by Vijay Ravi, vijjr@umich.edu
+**by** Vijay Ravi | **Email:** [vijjr@umich.edu](mailto:vijjr@umich.edu)
 
 # Introduction
 
@@ -15,11 +15,12 @@ Together these datasets include information about recipe nutrition, time to prep
 
 | Column | Description |
 | ----------- | ----------- |
-| [id] | A unique ID for each recipe / rating |
+| `id` | A unique ID for each recipe / rating |
 | [minutes] | The time to complete each recipe |
 | [tags] | A list of tags associated with a recipe |
 | [nutrition] | The nutrition information (i.e. calories, protein, fats, etc) |
 | [n_steps] | The number of steps in a recipe |
 | [rating] | The rating provided |
 
+# Data Cleaning and Exploratory Data Analysis
 
