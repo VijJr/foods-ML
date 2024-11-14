@@ -33,7 +33,7 @@ In the process of analysis, some cleaning had to be done before generating visua
 
 2. Once the `rating` feature was usable, the average rating was calculated by finding the mean rating for each individual recipe. This average rating is used as a representative for each recipe
 
-3. A minor issue within the data is that the tags were formatted as a string, so the next cleaning job was to splice the string into a python list for easier analysis down the line
+3. A minor issue within the data is that the tags were formatted as a string, so the next cleaning job was to splice the string into a python list for easier analysis down the line. This is then exploded into individual recipes with one tag each, creating many more observations. The explosion is done for the purposes of modeling tag distributions.
 
 4. The final step was to drop irrelevant features, and those features were `id`, `rating`, `review`, `description`, `steps`
 
@@ -47,3 +47,11 @@ The following is a representation of the cleaned dataset:
 |      275022 |        50 | main-ingredient    |            3 |      386.1 |        41 |        11 |
 |      275022 |        50 | preparation        |            3 |      386.1 |        41 |        11 |
 
+## Univariate Analysis
+
+<iframe
+  src="assets/top-10-tags.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
