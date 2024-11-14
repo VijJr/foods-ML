@@ -54,7 +54,7 @@ Before beginning the analysis, a plot was constructed to see the most common tag
 <iframe
   src="assets/top-10-tags.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -63,7 +63,7 @@ The next step was to see the average protein / calorie ratio across the data, an
 <iframe
   src="assets/protein-ratio-dist.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -89,7 +89,7 @@ Finally a bubble plot was created to visualize the linear relationship of protei
 
 ## Aggregations
 
-
+Another useful metric is aggregations, and below is a pivot table showing the mean values of minutes and number of steps across the binned protein calorie ratio and rating. Key observations are that the highest rated recipes with the highest protein calorie ratio have short prep time, and there are no low rated recipes with very high protein content relative to the calories.  
 
 |   ('minutes', 'Low') |   ('minutes', 'Medium') |   ('minutes', 'High') |   ('minutes', 'Very High') |   ('n_steps', 'Low') |   ('n_steps', 'Medium') |   ('n_steps', 'High') |   ('n_steps', 'Very High') |
 |---------------------:|------------------------:|----------------------:|---------------------------:|---------------------:|------------------------:|----------------------:|---------------------------:|
@@ -101,12 +101,16 @@ Finally a bubble plot was created to visualize the linear relationship of protei
 
 ## Imputations
 
+Due to the prevalence of null values, an imputation strategy must be employed to make meaningful predictions in the later part of this analysis. In this dataset, the only relevant feature that must be filled is the average rating. Below is the distribution before imputation. 
+
 <iframe
   src="assets/impute-before.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+The imputation strategy is to impute the mean average rating for each tag group, since tag is likely to be a discerning factor for a recipe's rating. Below is the distribution after imputation. Note that the distribution stays the same, with more values being added to the higher ratings. 
 
 <iframe
   src="assets/impute-after.html"
