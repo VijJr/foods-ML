@@ -35,7 +35,7 @@ In the process of analysis, some cleaning had to be done before generating visua
 
 3. A minor issue within the data is that the tags were formatted as a string, so the next cleaning job was to splice the string into a python list for easier analysis down the line. This is then exploded into individual recipes with one tag each, creating many more observations. The explosion is done for the purposes of modeling tag distributions.
 
-4. The final step was to drop irrelevant features, and those features were `id`, `rating`, `review`, `description`, `steps`
+4. The final step is to drop irrelevant features, and those features were `id`, `rating`, `review`, `description`, `steps`
 
 The following is a representation of the cleaned dataset:
 
@@ -49,12 +49,16 @@ The following is a representation of the cleaned dataset:
 
 ## Univariate Analysis
 
+Before beginning the analysis, a plot was constructed to see the most common tags in the dataset. This information was important to factor in bias, and get a better understanding of the kind of tags that are most commonly seen.
+
 <iframe
   src="assets/top-10-tags.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+The next step was to see the average protein / calorie ratio across the data, and undestand where the skew lies. From below it is apparent that the data is right skew, indicating that many recipes have higher protein compared to the associated calories. The most common protein to calorie ratio was around 5, which can be used as comparison for our predictive model later.
 
 <iframe
   src="assets/protein-ratio-dist.html"
@@ -65,6 +69,7 @@ The following is a representation of the cleaned dataset:
 
 ## Bivariate Analysis
 
+Now with the bivariate data, it was useful to see if the number of steps per recipe was correlated with the protein/ calorie ratio. As seen below, most recipes tend to have few steps, and vary widely. There also appears to be a very weak negative linear relationship, which could be of use later when building the model. 
 
 <iframe
   src="assets/protein-ratio-steps.html"
@@ -72,6 +77,8 @@ The following is a representation of the cleaned dataset:
   height="600"
   frameborder="0"
 ></iframe>
+
+Finally a bubble plot was created to visualize the linear relationship of protein / calorie ratio and the average rating for recipes, with an additional parameter of number of steps to tie everything together and see how they relate. It appears that majority of recipes are given high ratings, with higher protein to calorie ratio recipes getting higher ratings on average. Those with higher ratings and high ratios also appear to have comparatively less steps, which fits with our previous analysis. 
 
 <iframe
   src="assets/bubble-plot.html"
@@ -81,6 +88,8 @@ The following is a representation of the cleaned dataset:
 ></iframe>
 
 ## Aggregations
+
+
 
 |   ('minutes', 'Low') |   ('minutes', 'Medium') |   ('minutes', 'High') |   ('minutes', 'Very High') |   ('n_steps', 'Low') |   ('n_steps', 'Medium') |   ('n_steps', 'High') |   ('n_steps', 'Very High') |
 |---------------------:|------------------------:|----------------------:|---------------------------:|---------------------:|------------------------:|----------------------:|---------------------------:|
