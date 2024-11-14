@@ -83,7 +83,7 @@ Finally a bubble plot was created to visualize the linear relationship of protei
 <iframe
   src="assets/bubble-plot.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -106,7 +106,7 @@ Due to the prevalence of null values, an imputation strategy must be employed to
 <iframe
   src="assets/impute-before.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -115,6 +115,12 @@ The imputation strategy is to impute the mean average rating for each tag group,
 <iframe
   src="assets/impute-after.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
+
+# Framing the Prediction Problem
+
+
+
+
