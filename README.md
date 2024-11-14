@@ -51,8 +51,56 @@ The following is a representation of the cleaned dataset:
 
 <iframe
   src="assets/top-10-tags.html"
-  style="background: none transparent; background-color: transparent; background: transparent"
-  allowtransparency="true"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/protein-ratio-dist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+## Bivariate Analysis
+
+
+<iframe
+  src="assets/protein-ratio-steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/bubble-plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+## Aggregations
+
+|   ('minutes', 'Low') |   ('minutes', 'Medium') |   ('minutes', 'High') |   ('minutes', 'Very High') |   ('n_steps', 'Low') |   ('n_steps', 'Medium') |   ('n_steps', 'High') |   ('n_steps', 'Very High') |
+|---------------------:|------------------------:|----------------------:|---------------------------:|---------------------:|------------------------:|----------------------:|---------------------------:|
+|              82.0619 |                147.567  |               42.1401 |                   nan      |             10.5517  |                 9.81947 |               8.24638 |                  nan       |
+|              69.8968 |                120.265  |              240.206  |                     5      |             10.5317  |                10.5942  |              12.2065  |                    2       |
+|              81.1059 |                106.62   |              106.54   |                    41.0526 |              9.94521 |                 9.57153 |               8.97671 |                    9.78947 |
+|             102.648  |                121.601  |              108.329  |                    45.0248 |              9.75447 |                10.0727  |               9.27802 |                    8.71281 |
+|             110.514  |                 97.4084 |               89.7127 |                    41.4274 |              9.71389 |                10.4905  |               9.43699 |                    7.74062 |
+
+## Imputations
+
+<iframe
+  src="assets/impute-before.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/impute-after.html"
   width="800"
   height="600"
   frameborder="0"
