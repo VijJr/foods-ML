@@ -1,7 +1,3 @@
----
-layout: default
-title: "Recipe Analysis"
----
 
 # Recipe Analysis
 
