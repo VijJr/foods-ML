@@ -51,7 +51,8 @@ The following is a representation of the cleaned dataset:
 
 <iframe
   src="assets/top-10-tags.html"
-  style="background: transparent;"
+  style="background: none transparent; background-color: transparent; background: transparent"
+  allowtransparency="true"
   width="800"
   height="600"
   frameborder="0"
