@@ -54,7 +54,7 @@ Before beginning the analysis, a plot was constructed to see the most common tag
 <iframe
   src="assets/top-10-tags.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -63,7 +63,7 @@ The next step was to see the average protein / calorie ratio across the data, an
 <iframe
   src="assets/protein-ratio-dist.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -119,8 +119,24 @@ The imputation strategy is to impute the mean average rating for each tag group,
   frameborder="0"
 ></iframe>
 
-# Framing the Prediction Problem
+# Framing a Prediction Problem
+
+Based on the previous analysis, the prediction goal will be to find the `calories` of a given recipe, which is solvable using a regression model. The response variable `calories` will be useful for web mediums without a strict administration for food regulation, and calories may be mislabeled / innacurate for marketing purposes or otherwise. The accuracy metric in this model will MSE (mean squared error), as it captures regression problems well while penalizing high outliers. 
 
 
+# Baseline Model
+
+The baseline model will be a simple linear regression, with standardized scaling done to each numerical feature for weight interpretability. The tags are condensed back into a list and formatted similar to a one-hot encoding but for multiple labels at once. Below is a breakdown of the features that will be used in this prediction, as known at prediction time. 
+
+| Feature | Variable Type |
+| ----------- | ----------- |
+| `protein` | Quantitative - Standard Scaler|
+| `n_steps` | Quantitative - Standard Scaler|
+| `avg_rating` | Quantitative - Standard Scaler|
+| `minutes` | Quantitative - Standard Scaler|
+| `tags` | Nominal - Encoded with multilabel binarizer|
 
 
+This baseline model acheives a mean squared error of approximately 1121 on the train data, with an error of 1.2 x 10^20^ for the test data. This is by all means a terrible score, and likely heavily overfit due to the remarkable discrepancy between train and test error. 
+
+# Final Model
