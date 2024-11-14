@@ -25,9 +25,19 @@ Together these datasets include information about recipe nutrition, time to prep
 
 # Data Cleaning and Exploratory Data Analysis
 
-
+In the process of analysis, some cleaning had to be done before generating visualizations
 
 ## Cleaning the Data
+
+1. The first steps in cleaning was to merge all of the provided `rating` with the corresponding recipes over the `id`. After this step, there were many ratings of value 0, which is impossible in the standard rating system, thus ratings of 0 were replaced with `NaN`.
+
+2. Once the `rating` feature was usable, the average rating was calculated by finding the mean rating for each individual recipe. This average rating is used as a representative for each recipe
+
+3. A minor issue within the data is that the tags were formatted as a string, so the next cleaning job was to splice the string into a python list for easier analysis down the line
+
+4. The final step was to drop irrelevant features, and those features were `id`, `rating`, `review`, `description`, `steps`
+
+The following is a representation of the cleaned dataset:
 
 |   recipe_id |   minutes | tags               |   avg_rating |   calories |   protein |   n_steps |
 |------------:|----------:|:-------------------|-------------:|-----------:|----------:|----------:|
