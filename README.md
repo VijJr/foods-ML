@@ -121,7 +121,7 @@ The imputation strategy is to impute the mean average rating for each tag group,
 
 # Framing a Prediction Problem
 
-Based on the previous analysis, the prediction goal will be to find the `calories` of a given recipe, which is solvable using a regression model. The response variable `calories` will be useful for web mediums without a strict administration for food regulation, and calories may be mislabeled / innacurate for marketing purposes or otherwise. The accuracy metric in this model will MSE (mean squared error), as it captures regression problems well while penalizing high outliers. 
+Based on the previous analysis, the prediction goal will be to find the `protien` of a given recipe, which is solvable using a regression model. The response variable `protien` will be useful for web mediums without a strict administration for food regulation, and calories may be mislabeled / innacurate for marketing purposes or otherwise. The accuracy metric in this model will MSE (mean squared error), as it captures regression problems well while penalizing high outliers. 
 
 
 # Baseline Model
@@ -130,13 +130,37 @@ The baseline model will be a simple linear regression, with standardized scaling
 
 | Feature | Variable Type - Transformation|
 | ----------- | ----------- |
-| `protein` | Quantitative - Standard Scaler|
+| `calories` | Quantitative - Standard Scaler|
 | `n_steps` | Quantitative - Standard Scaler|
 | `avg_rating` | Quantitative - Standard Scaler|
 | `minutes` | Quantitative - Standard Scaler|
 | `tags` | Nominal - Multilabel Binarizer|
 
 
-This baseline model acheives a mean squared error of approximately 1121 on the train data, with an error of approximately 1.2e20 for the test data, showing the model cannot generalize well, and is not a good model. This is by all means a terrible score, and likely heavily overfit due to the remarkable discrepancy between train and test error. 
+The metric used for this analysis is mean squared error (MSE), for the purpose of regression. This baseline model acheives a mean squared error of approximately 2.22e-22 on the train data, with an error of approximately 0.0001 for the test data, showing the model can generalize well, and is a good model. This is by all means a good score, and likely well fit from the provided baseline features. 
 
 # Final Model
+
+For the final model the features added were a 2nd degree polynomial transformation of the calories, and a logarithmic transformation of the minutes, followed by a robust scaler. Shown below are graphs detailing the relationship between these features and the output feature `protien`
+
+<iframe
+  src="assets/calories_protein_corr.html"
+  width="800"
+  height="450"
+  frameborder="0"
+></iframe>
+
+As seen above, there appears to be a slight square root relationship, so the the transformation applied helped to model that relationship. This was followed by a scaler for interpretability. Interestingly, applying the square root transformation made the model worse, so perhaps the true relationship is a squared one. 
+
+<iframe
+  src="assets/minutes_protein_corr.html"
+  width="800"
+  height="450"
+  frameborder="0"
+></iframe>
+
+As seen above, the minutes relationship is heavily left skewed, so applying log helped to reduce the amount of skew, while a robust scaler after helps to normalize the data. 
+
+The final modeling algorithm applied was Ridge regression to combat overfitting, with a cross-validation grid search to find an optimal alpha constant for generalization. The resultant alpha was 0.0001, which is fairly low, indicating that the model was not too overfit. The purpose for running a grid search in this case was due to the difficulty of assessing an optimal regularization term for values like alpha. 
+
+The final model showed a training error of 2.21e-12, and a test error of 2.18e-12. This is a heavy improvement from the baseline model, and it can be seen that the train/test MSE are very similar. Note that the train MSE increased for the final model as a result of the regularization preventing heavy overfit, and the cross validation for more generalization. 
