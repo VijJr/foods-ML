@@ -3,7 +3,6 @@
 
 Analysis of recipes for EECS398 at the University of Michigan
 
-**by** Vijay Ravi \| **email:** <a href="mailto:vijjr@umich.edu">vijjr@umich.edu</a>
 
 # Introduction
 
